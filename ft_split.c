@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-static int	count_substrings(const char *s, char c);
-static char	*get_substring(char const *s, char c);
+static int	ft_count_substrings(const char *s, char c);
+static char	*ft_get_substring(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -22,7 +22,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	r = malloc((count_substrings(s, c) + 1) * sizeof(char *));
+	r = malloc((ft_count_substrings(s, c) + 1) * sizeof(char *));
 	if (!r)
 		return (NULL);
 	tmp = r;
@@ -31,7 +31,7 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		if (*s != c && *s)
-			*(tmp++) = get_substring(s, c);
+			*(tmp++) = ft_get_substring(s, c);
 		while (*s != c && *s)
 			s++;
 	}
@@ -39,7 +39,7 @@ char	**ft_split(char const *s, char c)
 	return (r);
 }
 
-static int	count_substrings(const char *s, char c)
+static int	ft_count_substrings(const char *s, char c)
 {
 	int		counter;
 
@@ -56,7 +56,7 @@ static int	count_substrings(const char *s, char c)
 	return (counter);
 }
 
-static char	*get_substring(char const *s, char c)
+static char	*ft_get_substring(char const *s, char c)
 {
 	char	*tmp;
 
