@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static int	get_char_count(int n);
+static int	ft_get_char_count(int n);
 
 char	*ft_itoa(int n)
 {
 	char	*r;
 	int		i;
 
-	i = get_char_count(n);
+	i = ft_get_char_count(n);
 	r = malloc(i);
 	if (!r)
 		return (NULL);
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 	return (r);
 }
 
-static int	get_char_count(int n)
+static int	ft_get_char_count(int n)
 {
 	int	counter;
 
