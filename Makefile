@@ -54,10 +54,8 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@echo "$(NAME) created"
-	@ranlib $(NAME)
-	@echo "$(NAME) indexed"
+	@ar rcs $(NAME) $(OBJ)
+	@echo "$(NAME) created and indexed"
 
 %.o: %.c
 	@gcc $(FLAG) -c $< -o $@
